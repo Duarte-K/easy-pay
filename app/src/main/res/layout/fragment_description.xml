@@ -2,42 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.PayOptionFragment">
+    tools:context=".fragments.DescriptionFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tx_payOption"
+        android:id="@+id/tx_descPay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="@string/pagamento"
+        android:text="@string/desc_pagamento"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="53dp"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="@string/credito"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tx_payOption" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
