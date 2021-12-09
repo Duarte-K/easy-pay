@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">EasyPay</string>
+    <string name="credito">CRÉDITO</string>
+    <string name="debito">DÉBITO</string>
+    <string name="desc_pagamento">Descrição do pagamento:</string>
+    <string name="pagamento">Escolha sua forma de pagamento:</string>
+    <string name="parcelas">Escolha a quantidade de parcelas:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
