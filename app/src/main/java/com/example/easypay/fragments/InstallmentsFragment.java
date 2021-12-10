@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import com.example.easypay.R;
 
 
-public class ValueFragment extends Fragment {
+public class InstallmentsFragment extends Fragment {
 
-    public ValueFragment() {
+    public InstallmentsFragment() {
         // Required empty public constructor
     }
 
