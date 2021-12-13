@@ -13,7 +13,6 @@ import com.example.easypay.fragments.DescriptionFragment;
 public class MainActivity extends AppCompatActivity {
 
     private DescriptionFragment descriptionFragment;
-    TextView txTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

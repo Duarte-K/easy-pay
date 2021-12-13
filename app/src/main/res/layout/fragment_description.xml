@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".fragments.DescriptionFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -53,6 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tx_descPay">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tx_Description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_semibold"
@@ -80,13 +81,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tx_Value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_semibold"
             android:hint="@string/value_pay"
+            android:inputType="number"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/black"
             android:textSize="16sp" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.Guideline
