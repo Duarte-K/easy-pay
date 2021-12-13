@@ -23,6 +23,7 @@ public class DescriptionFragment extends Fragment {
     private PayModel pay;
     private EditText description, value;
 
+
     public DescriptionFragment() {
         // Required empty public constructor
     }
@@ -42,9 +43,9 @@ public class DescriptionFragment extends Fragment {
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PayOptionFragment payOptionFragment = new PayOptionFragment();
+                InstallmentsFragment installmentsFragment = new InstallmentsFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_conteudo, payOptionFragment);
+                transaction.replace(R.id.frame_conteudo, installmentsFragment);
                 transaction.commit();
             }
         });
@@ -67,9 +68,9 @@ public class DescriptionFragment extends Fragment {
             }else{
                 valueFloat =  Float.parseFloat(valueFormat.replaceAll(",", "."));
             }
-
             pay.setDescription(descpay);
             pay.setPayValue(valueFloat);
+
         }
 
     }
