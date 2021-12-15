@@ -1,6 +1,8 @@
 package com.example.easypay.model;
 
-public class PayModel {
+import java.io.Serializable;
+
+public class PayModel implements Serializable {
     private String description;
     private String payOption;
 

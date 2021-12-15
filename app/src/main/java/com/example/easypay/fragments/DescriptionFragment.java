@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import com.example.easypay.utils.MoneyTextWatcher;
 import java.time.temporal.TemporalAccessor;
 
 import cielo.orders.domain.Credentials;
+import cielo.orders.domain.ResultOrders;
 import cielo.sdk.order.OrderManager;
 import cielo.sdk.order.ServiceBindListener;
 
@@ -34,6 +36,7 @@ public class DescriptionFragment extends Fragment {
     private EditText description, value;
     private RadioGroup rgOption;
     private String rbOpt;
+    private ResultOrders resultOrders;
 
 
 
@@ -54,15 +57,16 @@ public class DescriptionFragment extends Fragment {
 
         value.addTextChangedListener(new MoneyTextWatcher(value));
 
-        Credentials credentials = new Credentials("", "");
 
         rgOption.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.rb_credito){
                     rbOpt = ((RadioButton) view.findViewById(rgOption.getCheckedRadioButtonId())).getText().toString();
+                    pay.setPayOption(rbOpt);
                 }else{
                     rbOpt = ((RadioButton) view.findViewById(rgOption.getCheckedRadioButtonId())).getText().toString();
+                    pay.setPayOption(rbOpt);
                 }
 
             }
@@ -73,7 +77,10 @@ public class DescriptionFragment extends Fragment {
             public void onClick(View v) {
                 check();
                 if (check()){
+                    Bundle args = new Bundle();
+                    args.putSerializable("payment", pay);
                     InstallmentsFragment installmentsFragment = new InstallmentsFragment();
+                    installmentsFragment.setArguments(args);
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     transaction.replace(R.id.frame_conteudo, installmentsFragment);
                     transaction.commit();
@@ -103,7 +110,6 @@ public class DescriptionFragment extends Fragment {
             }
             pay.setDescription(descpay);
             pay.setPayValue(valueFloat);
-            pay.setPayOption(rbOpt);
         }
         return true;
     }
