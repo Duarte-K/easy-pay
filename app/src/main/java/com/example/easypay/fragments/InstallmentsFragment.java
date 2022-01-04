@@ -44,7 +44,7 @@ public class InstallmentsFragment extends Fragment {
         btnFinish = view.findViewById(R.id.btn_finish);
 
 
-        Credentials credentials = new Credentials("YiUmGRVJY3vI30LL7WM9TJEvxD2wMM4gplN5wTaIgkxnbkG4Sq", "f0DqLBUaLMH2Oa7SOR6Y5mNABPbClPL0Ea1lhBMrYFv4jtHrwD");
+        Credentials credentials = new Credentials("BkX665M4vQAkGhL23LFbWuAYjt9loQj1RBIpNa5sw7vIlTAWqA", "SrhFWLwcYGpmJHxHHME8vBHvgWUH3qIgEGl0P35JPw0xZKexhu");
 
         OrderManager orderManager = new OrderManager(credentials, getActivity());
 
