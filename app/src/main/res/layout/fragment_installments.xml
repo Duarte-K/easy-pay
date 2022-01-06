@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rb_parcel1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
@@ -41,37 +41,72 @@
             android:textColor="@color/black" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rb_parcel2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:text="Parcela 2"
-            android:textColor="@color/black" />
+            android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rb_parcel3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:text="Parcela 3"
-            android:textColor="@color/black" />
-    </RadioGroup>
+            android:text="RadioButton" />
 
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_bg_red"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="@string/cancel"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="16sp"
-        android:theme="@style/ButtonStyle"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/btn_finish" />
+        <RadioButton
+            android:id="@+id/rb_parcel4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb_parcel12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+    </RadioGroup>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"

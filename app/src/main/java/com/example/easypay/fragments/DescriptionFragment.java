@@ -1,5 +1,6 @@
 package com.example.easypay.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,8 +23,10 @@ import com.example.easypay.model.PayModel;
 import com.example.easypay.utils.MoneyTextWatcher;
 
 import java.time.temporal.TemporalAccessor;
+import java.util.UUID;
 
 import cielo.orders.domain.Credentials;
+import cielo.orders.domain.Order;
 import cielo.orders.domain.ResultOrders;
 import cielo.sdk.order.OrderManager;
 import cielo.sdk.order.ServiceBindListener;
@@ -36,7 +39,6 @@ public class DescriptionFragment extends Fragment {
     private EditText description, value;
     private RadioGroup rgOption;
     private String rbOpt;
-    private ResultOrders resultOrders;
 
 
 
@@ -56,37 +58,42 @@ public class DescriptionFragment extends Fragment {
         pay = new PayModel();
 
         value.addTextChangedListener(new MoneyTextWatcher(value));
-
+        rbOpt = ((RadioButton) view.findViewById(rgOption.getCheckedRadioButtonId())).getText().toString();
 
         rgOption.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rb_credito){
-                    rbOpt = ((RadioButton) view.findViewById(rgOption.getCheckedRadioButtonId())).getText().toString();
-                    pay.setPayOption(rbOpt);
+                if(checkedId == R.id.rb_credito) {
+                    //rbOpt = ((RadioButton) view.findViewById(rgOption.getCheckedRadioButtonId())).getText().toString();
+                    //pay.setPayOption(rbOpt);
                 }else{
                     rbOpt = ((RadioButton) view.findViewById(rgOption.getCheckedRadioButtonId())).getText().toString();
-                    pay.setPayOption(rbOpt);
+                    //pay.setPayOption(rbOpt);
                 }
-
             }
         });
+        pay.setPayOption(rbOpt);
+        Log.i("fafa",""+rbOpt);
+        Log.i("gaga",""+pay.getPayOption());
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 check();
                 if (check()){
+                    Log.i("valores", ""+pay.getDescription()+","+pay.getPayValue()+""+pay.getPayOption());
                     Bundle args = new Bundle();
                     args.putSerializable("payment", pay);
                     InstallmentsFragment installmentsFragment = new InstallmentsFragment();
                     installmentsFragment.setArguments(args);
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     transaction.replace(R.id.frame_conteudo, installmentsFragment);
+                    transaction.addToBackStack(null);
                     transaction.commit();
                 }
             }
         });
+
         return view;
     }
 
@@ -108,9 +115,12 @@ public class DescriptionFragment extends Fragment {
             }else{
                 valueFloat =  Float.parseFloat(valueFormat.replaceAll(",", "."));
             }
+
             pay.setDescription(descpay);
             pay.setPayValue(valueFloat);
+
         }
+
         return true;
     }
 }
